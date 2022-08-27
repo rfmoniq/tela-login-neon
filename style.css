@@ -1,0 +1,114 @@
+body {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: #000;
+	font-family: arial;
+}
+
+.conteudo {
+	position: relative;
+	width: 450px;
+	min-height: 300px;
+	background: rgba(255,255,255,0.01); 
+	border-radius: 4px;
+}
+
+.conteudo:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50%;
+	height: 100%;
+	pointer-events: none;
+}
+
+/* Efeito gradiente no formulário FAZER POR ÚLTIMO */
+.conteudo:after {
+	content: '';
+	position: absolute;
+	top: -5px;
+	left: -5px;
+	right: -5px;
+	bottom: -5px;
+	background: linear-gradient(45deg, #3F3FBF, #3FBFBF);
+	pointer-events: none;
+	animation: animate 5s linear infinite;
+}
+
+/* Efeito gadiente no formulário FAZER POR ÚLTIMO */
+@keyframes animate {
+	0%
+	{
+		filter: blur(60px) hue-rotate(0deg);
+	}
+
+	100%
+	{
+		filter: blur(60px) hue-rotate(360deg);
+	}
+}
+
+.formulario {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	padding: 35px;
+	box-sizing: border-box;
+	z-index:1;
+}
+
+.formulario h2 {
+	margin:0;
+	padding: 0;
+	text-align: center;
+	color: #fff;
+	font-size: 24px;
+}
+
+.formulario .inputBox {
+	width: 100%;
+	margin-top:  20px;
+}
+
+.formulario .inputBox input {
+	width: 100%;
+	background: transparent;
+	border: none;
+	border-bottom: 2px solid #fff;
+	outline: none;
+	font-size: 18px;
+	color: #fff;
+	padding: 5px 0;
+	font-family: arial;
+}
+
+::placeholder {
+	color: #eee;
+}
+
+.formulario .inputBox input[type="submit"] {
+	background: #fff;
+	color: #000;
+	border-radius: 4px;
+	font-weight: 900;
+	cursor: pointer;
+}
+
+.formulario p  {
+	color: #eee;
+	text-align: center;
+}
+
+.formulario p a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.formulario a:hover {
+	text-decoration: underline;
+}
